@@ -309,7 +309,7 @@ export default class FullscreenToNewWorkspace extends Extension {
         return this.isNormalWindow(win) && (
             this.isMaximizeEnabled() ?
                 // This is also true for fullscreen windows as well as maximized windows  
-                win.get_maximized() === Meta.MaximizeFlags.BOTH :
+                win.is_maximized():
                 win.fullscreen
         );
     }
@@ -318,7 +318,7 @@ export default class FullscreenToNewWorkspace extends Extension {
         return this.isNormalWindow(win) && (
             (this.isMaximizeEnabled() && 
                 (change === Meta.SizeChange.MAXIMIZE) && 
-                (win.get_maximized() === Meta.MaximizeFlags.BOTH)) ||
+                (win.is_maximized())) ||
             (change === Meta.SizeChange.FULLSCREEN)
         );
     }
@@ -332,7 +332,7 @@ export default class FullscreenToNewWorkspace extends Extension {
                     rectmax.equal(rectold)) ||
             ((change === Meta.SizeChange.UNFULLSCREEN) && 
                 (this.isMaximizeEnabled() ? 
-                    (win.get_maximized() !== Meta.MaximizeFlags.BOTH) :
+                    (win.is_maximized()) :
                     true))
         );
     }
