@@ -3,12 +3,16 @@
 https://extensions.gnome.org/extension/(not registered yet)
 
 Imitates how macOS deals with workspaces.  
-Moves all windowed apps to workspace 0.  
+Moves all normal windows to workspace 0 (the leftmost one).  
 Moves all fullscreen and (optional) maximized windows to their own workspaces.  
-Setting decides if maximized windows get their own space (default: true)  
-Note: a fullscreen app has no chrome (Title bar, borders) and covers the gnome bar, like F11 in FireFox.
+A setting decides if maximized windows get their own space (default: true)  
+Child dialogs of fullscreen apps like 'Open File dlg' (should) stay on the parent workspace.  
 
-Does not support multiple monitors (I prefer single large screens and could not test it).
+(Terminology) 'fullscreen' vs. 'maximized': a fullscreen window has no chrome (Title bar, borders) and covers the gnome bar, like F11 in FireFox.  
+
+### Limitations
+- Does not support multiple monitors (I prefer single large screens and cannot test it)
+- Some special cases (like Firefox About window) are not recognized as child dialogs and move to workspace 0.
 
 ### Installation
 1. clone repo
