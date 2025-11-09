@@ -1,7 +1,5 @@
 # macOS Style Workspaces
 ### GNOME Shell Extension
-https://extensions.gnome.org/extension/(not registered yet)
-
 Imitates how macOS deals with workspaces.  
 Moves all normal windows to workspace 0 (the leftmost one).  
 Moves all fullscreen and (optional) maximized windows to their own workspaces.  
@@ -13,6 +11,7 @@ Child dialogs of fullscreen apps like 'Open File dlg' (should) stay on the paren
 ### Limitations
 - Does not support multiple monitors (I prefer single large screens and cannot test it)
 - Some special cases (like Firefox About window) are not recognized as child dialogs and move to workspace 0.
+- not registered on extensions.gnome.org/extension/ for direct installation (must install manually)
 
 ### Installation
 1. clone repo
