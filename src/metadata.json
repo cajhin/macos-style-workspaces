@@ -2,7 +2,7 @@
   "name": "Fullscreen to Empty Workspace2",
   "description": "New, maximized and fullscreen windows will be moved to empty workspaces.\nForked from https://github.com/kaiseracm/gnome-shell-extension-maximize-to-empty-workspace.",
   "url": "https://github.com/corgijan/fullscreen-to-new-workspace",
-  "uuid": "fullscreen-to-empty-workspace2@corgijan.dev",
+  "uuid": "fullscreen-to-empty-workspace2@cajhin",
   "shell-version": [
     "49"
   ],
