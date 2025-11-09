@@ -133,6 +133,19 @@ export default class MacOSStyleWorkspaces extends Extension {
     window_manager_map(act)
     {
         const win = act.meta_window;
+
+        // Handle dialogs with transient parents - keep them with parent
+        if (this.isDialogWindow(win) && this.hasTransientParent(win)) {
+            const parent = win.get_transient_for();
+            const parentWorkspace = parent.get_workspace();
+
+            // Place dialog on same workspace as parent
+            if (win.get_workspace() !== parentWorkspace) {
+                win.change_workspace(parentWorkspace);
+            }
+            return;
+        }
+
         if (this.shouldPlaceOnNewWorkspaceWin(win)) {
             this.placeOnWorkspace(win);
         } else if (this.isNormalWindow(win) && !win.is_maximized() && !win.fullscreen) {
@@ -201,14 +214,28 @@ export default class MacOSStyleWorkspaces extends Extension {
     }
 
     isNormalWindow(win) {
-        return (win.window_type === Meta.WindowType.NORMAL) && 
+        return (win.window_type === Meta.WindowType.NORMAL) &&
             !win.is_always_on_all_workspaces();
     }
 
+    isDialogWindow(win) {
+        return win.window_type === Meta.WindowType.DIALOG ||
+               win.window_type === Meta.WindowType.MODAL_DIALOG;
+    }
+
+    hasTransientParent(win) {
+        return win.get_transient_for() !== null;
+    }
+
     shouldPlaceOnNewWorkspaceWin(win) {
+        // Skip dialogs that have a transient parent - they should stay with parent
+        if (this.isDialogWindow(win) && this.hasTransientParent(win)) {
+            return false;
+        }
+
         return this.isNormalWindow(win) && (
             this.isMaximizeEnabled() ?
-                // This is also true for fullscreen windows as well as maximized windows  
+                // This is also true for fullscreen windows as well as maximized windows
                 win.is_maximized():
                 win.fullscreen
         );
