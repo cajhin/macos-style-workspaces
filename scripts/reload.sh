@@ -9,5 +9,8 @@ sleep 0.5
 gnome-extensions enable "$EXT_UUID" 2>&1
 
 echo ""
-echo "Checking for errors in the last 10 lines:"
-journalctl -b -o cat /usr/bin/gnome-shell 2>&1 | grep -i "cajhin\|fullscreen-to-empty" | tail -10
+echo "Checking for NEW errors (last 5 seconds):"
+journalctl -b --since "5 seconds ago" 2>&1 | grep -i "cajhin\|fullscreen-to-empty\|error.*extension" | tail -10
+if [ $? -ne 0 ]; then
+    echo "No new errors found!"
+fi

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME=fullscreen-to-empty-workspace2@corgijan.dev
+NAME=fullscreen-to-empty-workspace2@cajhin
 DIR=src
 pushd $DIR
 zip -r $NAME.zip *
