@@ -10,6 +10,11 @@ Note: a fullscreen app has no chrome (Title bar, borders) and covers the gnome b
 
 Does not support multiple monitors (I prefer single large screens and could not test it).
 
+### Installation
+1. clone repo
+2. run in ./scripts: deploy.sh and reload.sh
+3. sign out and back in (only needed on initial install, not for updates)
+
 ## Why?
 I like the MacOS design better. In Gnome, i often lose/forget windows behind fullscreen apps.
 
