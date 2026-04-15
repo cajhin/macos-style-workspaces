@@ -1,4 +1,7 @@
 # macOS Style Workspaces
+
+(works great on my Dell XPS; unreliable on my desktop)
+
 ### GNOME Shell Extension
 Imitates how macOS deals with workspaces.  
 Moves all normal windows to workspace 0 (the leftmost one).  
