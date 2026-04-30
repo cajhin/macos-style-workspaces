@@ -1,10 +1,11 @@
 {
   "name": "macOS Style Workspaces",
-  "description": "Moves all windowed apps to workspace 0, and all maximized apps to their own workspaces",
+  "description": "Replicates macOS workspace behavior: windowed apps share workspace 0, while fullscreen apps (configurable: maximized too) each get their own dedicated workspace. Tested with single-monitor only.",
   "url": "https://github.com/cajhin/macos-style-workspaces",
   "uuid": "macos-style-workspaces@cajhin",
   "shell-version": [
-    "49"
+    "49",
+    "50"
   ],
   "version": 16,
   "settings-schema": "org.gnome.shell.extensions.macos-style-workspaces"

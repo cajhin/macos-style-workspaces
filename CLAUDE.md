@@ -54,7 +54,7 @@ After first deployment, sign out and back in to activate the extension. For subs
 
 **src/metadata.json** - Extension metadata
 - UUID: `macos-style-workspaces@cajhin`
-- Target shell version: 49
+- Target shell versions: 49, 50
 - Settings schema: `org.gnome.shell.extensions.macos-style-workspaces`
 
 **src/schemas/org.gnome.shell.extensions.macos-style-workspaces.gschema.xml** - GSettings schema

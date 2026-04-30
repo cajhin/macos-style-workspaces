@@ -18,8 +18,8 @@ Child dialogs of fullscreen apps like 'Open File dlg' (should) stay on the paren
 
 ### Installation
 1. clone repo
-2. run in ./scripts: deploy.sh and reload.sh
-3. sign out and back in (only needed on initial install, not for updates)
+2. run in ./scripts: deploy.sh
+3. sign out and back in (because Gnome/Wayland suck sometimes)
 
 ## Why?
 I like the MacOS design better. In Gnome, i often lose/forget windows behind fullscreen apps.
